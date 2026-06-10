@@ -47,6 +47,42 @@ npm run dev
 
 3. Open the app in your browser
 
+## Quick Start
+
+- Install dependencies:
+
+```bash
+npm install
+```
+
+- Run development server (uses Webpack by default in this repo):
+
+```bash
+npm run dev
+# or the explicit alias
+npm run dev:webpack
+```
+
+- Create a production build:
+
+```bash
+npm run build
+# or the explicit alias
+npm run build:webpack
+```
+
+- Start the production server (after build):
+
+```bash
+npm run start
+```
+
+Notes:
+
+- This workspace encountered Turbopack manifest/ENOSPC issues in some environments, so the project is configured to run with Webpack (see `package.json` scripts). If you prefer Turbopack and your environment supports it, remove the `--webpack` flags.
+- If Next.js warns about an inferred workspace root (multiple lockfiles), you can either remove the extra lockfile or set `outputFileTracingRoot` in `next.config.mjs`.
+- For CI, run `npm ci` then `npm run build` to validate production builds.
+
 ## Environment Variables
 
 Copy `.env.example` to `.env.local` and configure any API keys if you later add real AI or data connectors.
