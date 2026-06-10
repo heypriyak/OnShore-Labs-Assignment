@@ -101,16 +101,15 @@ Copy `.env.example` to `.env.local` and configure any API keys if you later add 
 
 ## Future Improvements
 
-
 ## Deploying to Vercel
 
 Recommended: connect this GitHub repository to Vercel for automatic deployments on push.
 
 1. Go to https://vercel.com and sign in with GitHub.
 2. Import the repository `heypriyak/OnShore-Labs-Assignment` and follow the project setup.
-	 - Framework: Next.js
-	 - Build command: `npm run build`
-	 - Output directory: (leave blank — Next.js defaults)
+   - Framework: Next.js
+   - Build command: `npm run build`
+   - Output directory: (leave blank — Next.js defaults)
 3. Add any environment variables via the Vercel dashboard if you add real connectors later.
 
 This repo includes `vercel.json` for a minimal Next.js deployment. If you prefer automated deploys via GitHub Actions, create a secret `VERCEL_TOKEN` and use the official Vercel action.
@@ -137,3 +136,25 @@ jobs:
 					prod: true
 ```
 
+## Screenshots & Demo
+
+Place the screenshots you captured into the `screenshots/` folder. Recommended filenames (already shown in this conversation) so the README displays correctly:
+
+- `screenshots/01-dashboard.png` — full-width hero dashboard (1280×720)
+- `screenshots/02-generate.png` — input form + generated results (1280×720)
+- `screenshots/03-kpis.png` — KPI row close-up (800×450)
+- `screenshots/04-review-reply.png` — recent review with suggested reply (800×600)
+- `screenshots/05-top-phrases.png` — top complaints/phrases (800×450)
+- `screenshots/06-urgent-modal.png` — urgent review highlight or modal (600×600)
+- `screenshots/07-mobile.png` — mobile viewport (iPhone 12 emulation, 390×844)
+- `screenshots/08-ci.png` — CI build passing (1200×600)
+- `screenshots/09-prod.png` — deployed production site (optional)
+- `screenshots/10-generate-flow.mp4` — short demo MP4 (optional)
+
+To embed them in the README, add markdown like:
+
+```markdown
+![Dashboard screenshot](screenshots/01-dashboard.png)
+```
+
+If you prefer, paste the captured images into the `screenshots/` folder and tell me; I can commit them for you.
