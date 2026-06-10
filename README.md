@@ -101,8 +101,39 @@ Copy `.env.example` to `.env.local` and configure any API keys if you later add 
 
 ## Future Improvements
 
-- Swap mock connectors with real API integrations
-- Add multi-business history and saved searches
-- Add export to CSV/PDF
-- Add authentication and team roles
-- Deploy to Vercel
+
+## Deploying to Vercel
+
+Recommended: connect this GitHub repository to Vercel for automatic deployments on push.
+
+1. Go to https://vercel.com and sign in with GitHub.
+2. Import the repository `heypriyak/OnShore-Labs-Assignment` and follow the project setup.
+	 - Framework: Next.js
+	 - Build command: `npm run build`
+	 - Output directory: (leave blank — Next.js defaults)
+3. Add any environment variables via the Vercel dashboard if you add real connectors later.
+
+This repo includes `vercel.json` for a minimal Next.js deployment. If you prefer automated deploys via GitHub Actions, create a secret `VERCEL_TOKEN` and use the official Vercel action.
+
+Example GitHub Action (optional) to deploy on push:
+
+```yaml
+name: Deploy to Vercel
+
+on:
+	push:
+		branches: [ main ]
+
+jobs:
+	deploy:
+		runs-on: ubuntu-latest
+		steps:
+			- uses: actions/checkout@v4
+			- uses: amondnet/vercel-action@v20
+				with:
+					vercel-token: ${{ secrets.VERCEL_TOKEN }}
+					vercel-org-id: ${{ secrets.VERCEL_ORG_ID }}
+					vercel-project-id: ${{ secrets.VERCEL_PROJECT_ID }}
+					prod: true
+```
+
